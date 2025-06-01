@@ -72,7 +72,6 @@ Optimized (No limit)	25,288	↓ ~46%
 
 ~29% of optimized trips use boat segments
 
-Contact
 Developed as part of a Master's thesis (2024) at NHH - authors Sondre Sejersted Siger & Eirik Korshamn. For questions or collaboration inquiries, contact: sondresiger@hotmail.no.
 
 -------------------------------------
