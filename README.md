@@ -7,7 +7,7 @@
 
 ## 📘 Introduction
 
-This program was developed as part of our master’s thesis at NHH, focusing on optimizing public transport routes in the Bergen region by integrating hydrogen-powered boats. The full pipeline is structured into **13 sequential steps**, as illustrated in the flowchart (see Appendix B).
+This program was developed as part of our master’s thesis at NHH, focusing on optimizing public transport routes in the Bergen region by integrating hydrogen-powered boats. The full pipeline is structured into **13 sequential steps**, as illustrated in the flowchart (see Appendix B), for full SQL/database structure (see Appendix C).
 
 > NB! The thesis will be published and linked here after formal evaluation, in order to avoid issues related to plagiarism detection.
 
