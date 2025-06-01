@@ -1,62 +1,67 @@
-# BANTHE – Assessing the Impact of Replacing Bus Routes with Hydrogen Boats in Bergen:
-An Optimization Study using Linear Programming
+# BANTHE – Norwegian School of Economics (NHH) - Independent Thesies in Business Analytics
 
-🚀 Purpose
+## Assessing the Impact of Replacing Bus Routes with Hydrogen Boats in Bergen  
+*A Linear Programming Optimization Study*
+
+Athors: Sondre Sejersted Siger and Eirik Korshamn
+
+## 📘 Introduction
+
+This program was developed as part of our master’s thesis at NHH, focusing on optimizing public transport routes in the Bergen region by integrating hydrogen-powered boats. The full pipeline is structured into **13 sequential steps**, as illustrated in the flowchart (see Appendix B).
+
+> NB! The thesis will be published and linked here after formal evaluation, in order to avoid issues related to plagiarism detection.
+
+
+### 🚀 Purpose
 BANTHE is a Python-based linear optimization model developed to explore the emission-reduction potential of integrating hydrogen-powered boat transport into Bergen’s public transport system. Using real public transport data, routing algorithms, and a gravity model of travel demand, the system identifies low-emission multimodal routes between spatial clusters in the region.
 
-📦 Project Structure
+### 📦 Project Structure
 The code is structured around three main phases:
 
-1. Data Preprocessing
-Load and filter public transport boarding data (Skyss)
+The entire pipeline follows a structured sequence of 13 documented steps, from data ingestion to optimization and results analysis. Each step corresponds to a specific task, as illustrated in the flow diagram below.
 
-Cluster population and employment data (SSB) using KMeans
+Each code block in the main notebook (BANTHE_main.ipynb) begins with a descriptive header that explains what that block accomplishes (e.g., “Step 5 – Compute All Cluster-to-Cluster Travel Routes”). This makes the code easy to follow, modify, and reuse.
 
-Clean and load quay location data
+The steps are grouped into three main phases:
 
-Compute travel distances between clusters using:
+### 🧹 Preprocessing (Steps 1–10)
+Install required packages and initialize database
 
-Road routing (OSM + A*)
+Import Skyss passenger boarding data
 
-Multimodal routing for island clusters (Entur API + boat routes)
+Generate spatial population/employment clusters
 
-Construct a gravity-based travel demand matrix using a Weibull distribution
+Import ferry quays and compute distances
 
+Calculate cluster-to-cluster travel routes
 
-2. Optimization (Linear Programming)
-Identify optimal route (bus or boat) per cluster pair
+Simulate inter-cluster demand via gravity model
 
-Objective: Minimize total CO₂ emissions
+Define emissions per transport mode
 
-Constraint: Maximum 20% increase in travel time over direct bus route
+Calculate emissions for bus-only routes
 
+Estimate boat-compatible routes from clusters to quays
 
-3. Evaluation
-Quantify emissions, travel times, and boat usage
+Prepare final dataset for optimization
 
-Compare optimized network against bus-only baseline
+### ⚙️ Optimization (Step 11)
+Solve the emission-minimizing assignment problem under travel time constraints
 
-Visualize quay usage and passenger flow across scenarios
+### 📊 Analysis (Steps 12–13)
+Generate baseline (bus-only) emissions
+
+Summarize and compare results: emissions, time, mode share
+
+Each step is self-contained and can be run independently, allowing flexibility in debugging or applying the method to new datasets.
 
 Key Files
 File	Description
 BANTHE_main.ipynb	Jupyter Notebook with all pipeline steps
-Input/	Raw input data (boarding, population, quays, routes)
+Input/	Raw input data (boarding (Skyss-data), population (SSB), quays, boat routes (91)).
 Output/	Generated matrices, emissions, optimization results
 Database/BANTHE.db	SQLite database storing intermediate data
 .gitignore	Ignores temporary or large files (e.g., routes)
-
-
-Methodology Highlights
-Routing: Uses A* on OpenStreetMap for road routes; Entur API for inaccessible clusters
-
-Travel Time Calibration: Boat times calibrated using real crossings (e.g., Hufthamar–Krokeide)
-
-Emissions: CO₂e estimated from fuel consumption data (Skyss, 2023)
-
-Gravity Model: Weibull-distributed probability decay based on distance
-
-Multimodal Chains: Precomputed combinations of cluster → quay → boat → quay → cluster
 
 Results Summary
 Scenario	Emissions (tons CO₂)	Reduction vs. Baseline
@@ -67,5 +72,18 @@ Optimized (No limit)	25,288	↓ ~46%
 ~29% of optimized trips use boat segments
 
 Contact
-Developed as part of a Master's thesis (2024). For questions or collaboration inquiries, contact: sondresiger@hotmail.no 
+Developed as part of a Master's thesis (2024) at NHH - authors Sondre Sejersted Siger & Eirik Korshamn. For questions or collaboration inquiries, contact: sondresiger@hotmail.no.
+
+## 📱 App
+Although slightly outside the core scope of this thesis, we are also developing an app (see the app/ folder) to visualize the optimized transport solutions.
+
+The current MVP (minimum viable product) supports:
+
+Loading results from a selected optimization scenario
+
+Selecting a start cluster and viewing routes to all possible destination clusters
+
+The app can be downloaded and run locally on any computer with Python installed. This makes it accessible for those who want to explore the model's outputs interactively, either for further analysis or demonstration purposes.
+
+A more advanced version is currently under development—for our personal portfolios and for anyone interested in engaging with the model in a user-friendly format.
 
