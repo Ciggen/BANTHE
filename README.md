@@ -3,7 +3,7 @@
 ## "Assessing the Impact of Replacing Bus Routes with Hydrogen Boats in Bergen"  
 ### - *A Linear Programming Optimization Study*
 
-#### ---- Authors: Sondre Sejersted Siger and Eirik Korshamn ----
+#### ---- Authors: *Sondre Sejersted Siger and Eirik Korshamn ----
 
 ## 📘 Introduction
 
@@ -25,33 +25,33 @@ Each code block in the main notebook (BANTHE_main.ipynb) begins with a descripti
 The steps are grouped into three main phases:
 
 ### 🧹 Preprocessing (Steps 1–10)
-Install required packages and initialize database
+1. Install required packages and initialize database
 
-Import Skyss passenger boarding data
+2. Import Skyss passenger boarding data
 
-Generate spatial population/employment clusters
+3. Generate spatial population/employment clusters
 
-Import ferry quays and compute distances
+4. Import ferry quays and compute distances
 
-Calculate cluster-to-cluster travel routes
+5. Calculate cluster-to-cluster travel routes
 
-Simulate inter-cluster demand via gravity model
+6. Simulate inter-cluster demand via gravity model
 
-Define emissions per transport mode
+7. Define emissions per transport mode
 
-Calculate emissions for bus-only routes
+8. Calculate emissions for bus-only routes
 
-Estimate boat-compatible routes from clusters to quays
+9. Estimate boat-compatible routes from clusters to quays
 
-Prepare final dataset for optimization
+10. Prepare final dataset for optimization
 
 ### ⚙️ Optimization (Step 11)
-Solve the emission-minimizing assignment problem under travel time constraints
+11. Solve the emission-minimizing assignment problem under travel time constraints
 
 ### 📊 Analysis (Steps 12–13)
-Generate baseline (bus-only) emissions
+12. Generate baseline (bus-only) emissions
 
-Summarize and compare results: emissions, time, mode share
+13. Summarize and compare results: emissions, time, mode share
 
 Each step is self-contained and can be run independently, allowing flexibility in debugging or applying the method to new datasets.
 
@@ -63,6 +63,7 @@ Output/	Generated matrices, emissions, optimization results
 Database/BANTHE.db	SQLite database storing intermediate data
 .gitignore	Ignores temporary or large files (e.g., routes)
 
+-------------------------------------
 Results Summary
 Scenario	Emissions (tons CO₂)	Reduction vs. Baseline
 Bus-Only (Baseline)	46,982	–
