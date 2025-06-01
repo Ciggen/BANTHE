@@ -1,9 +1,9 @@
 # BANTHE – Norwegian School of Economics (NHH) - Independent Thesies in Business Analytics
 
 ## Assessing the Impact of Replacing Bus Routes with Hydrogen Boats in Bergen  
-*A Linear Programming Optimization Study*
+### *A Linear Programming Optimization Study*
 
-Athors: Sondre Sejersted Siger and Eirik Korshamn
+#### ---- Authors: Sondre Sejersted Siger and Eirik Korshamn ----
 
 ## 📘 Introduction
 
