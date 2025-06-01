@@ -75,6 +75,8 @@ Optimized (No limit)	25,288	↓ ~46%
 Contact
 Developed as part of a Master's thesis (2024) at NHH - authors Sondre Sejersted Siger & Eirik Korshamn. For questions or collaboration inquiries, contact: sondresiger@hotmail.no.
 
+-------------------------------------
+
 ## 📱 App
 Although slightly outside the core scope of this thesis, we are also developing an app (see the app/ folder) to visualize the optimized transport solutions.
 
@@ -82,9 +84,10 @@ The current MVP (minimum viable product) supports:
 
 Loading results from a selected optimization scenario
 
-Selecting a start cluster and viewing routes to all possible destination clusters
+Selecting a start cluster and viewing routes to all reachable destination clusters
 
-The app can be downloaded and run locally on any computer with Python installed. This makes it accessible for those who want to explore the model's outputs interactively, either for further analysis or demonstration purposes.
+The app can be downloaded and run locally on any computer with Python installed. This allows users to explore the model's outputs interactively—either for further analysis or demonstration purposes.
 
-A more advanced version is currently under development—for our personal portfolios and for anyone interested in engaging with the model in a user-friendly format.
+⚠️ Note: To use the app locally, you must first run the main notebook (BANTHE_main.ipynb) to generate the local SQLite database (BANTHE.db). This database is required for the app to function properly.
 
+An extended version of the app is currently in development, intended for our personal portfolios and for those interested in a more refined and user-friendly interface.
