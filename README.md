@@ -1,4 +1,6 @@
-BANTHE – Hydrogen Boat Optimization for Bergen Region
+# BANTHE – Assessing the Impact of Replacing Bus Routes with Hydrogen Boats in Bergen:
+An Optimization Study using Linear Programming
+
 🚀 Purpose
 BANTHE is a Python-based linear optimization model developed to explore the emission-reduction potential of integrating hydrogen-powered boat transport into Bergen’s public transport system. Using real public transport data, routing algorithms, and a gravity model of travel demand, the system identifies low-emission multimodal routes between spatial clusters in the region.
 
@@ -20,12 +22,14 @@ Multimodal routing for island clusters (Entur API + boat routes)
 
 Construct a gravity-based travel demand matrix using a Weibull distribution
 
+
 2. Optimization (Linear Programming)
 Identify optimal route (bus or boat) per cluster pair
 
 Objective: Minimize total CO₂ emissions
 
 Constraint: Maximum 20% increase in travel time over direct bus route
+
 
 3. Evaluation
 Quantify emissions, travel times, and boat usage
@@ -34,7 +38,7 @@ Compare optimized network against bus-only baseline
 
 Visualize quay usage and passenger flow across scenarios
 
-🗂️ Key Files
+Key Files
 File	Description
 BANTHE_main.ipynb	Jupyter Notebook with all pipeline steps
 Input/	Raw input data (boarding, population, quays, routes)
@@ -42,7 +46,8 @@ Output/	Generated matrices, emissions, optimization results
 Database/BANTHE.db	SQLite database storing intermediate data
 .gitignore	Ignores temporary or large files (e.g., routes)
 
-📊 Methodology Highlights
+
+Methodology Highlights
 Routing: Uses A* on OpenStreetMap for road routes; Entur API for inaccessible clusters
 
 Travel Time Calibration: Boat times calibrated using real crossings (e.g., Hufthamar–Krokeide)
@@ -53,7 +58,7 @@ Gravity Model: Weibull-distributed probability decay based on distance
 
 Multimodal Chains: Precomputed combinations of cluster → quay → boat → quay → cluster
 
-📈 Results Summary
+Results Summary
 Scenario	Emissions (tons CO₂)	Reduction vs. Baseline
 Bus-Only (Baseline)	46,982	–
 Optimized (120% time limit)	40,052	↓ ~14.75%
@@ -61,42 +66,6 @@ Optimized (No limit)	25,288	↓ ~46%
 
 ~29% of optimized trips use boat segments
 
-Boat usage concentrated at Strandkaiterminalen, Kleppestø, Hufthamar
-
-All optimized routes remain within allowed time constraints
-
-🖼️ Model Flowchart
-Preprocessing to Optimization:
-
-Evaluation and Output Summary:
-
-📚 References
-Public transport data: Skyss.no
-
-Population and employment data: SSB
-
-Routing APIs: OpenStreetMap, Entur
-
-Hydrogen modeling: Literature synthesis, Skyss fuel stats, and calibration benchmarks
-
-⚠️ Limitations
-No integration of Bybanen (light rail)
-
-No transfer/waiting times included
-
-Assumes average bus emissions (diesel-only)
-
-No modeling of hydrogen fuel supply chain
-
-🔄 Future Work
-Integrate additional modes (rail, bike, walking)
-
-Dynamic time-of-day analysis
-
-Add real timetables and transfer wait times
-
-Simulate alternative hydrogen boat technologies
-
-📬 Contact
-Developed as part of a Master's thesis (2024). For questions or collaboration inquiries, contact: [your email]
+Contact
+Developed as part of a Master's thesis (2024). For questions or collaboration inquiries, contact: sondresiger@hotmail.no 
 
